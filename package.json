@@ -15,6 +15,10 @@
     "electron": "3.0.7",
     "electron-builder": "^20.31.2",
     "electron-webpack": "^2.4.0",
+    "electron-webpack-vue": "^2.2.2",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.5.17",
     "webpack": "^4.24.0"
   }
 }
