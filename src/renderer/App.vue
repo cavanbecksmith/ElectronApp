@@ -1,6 +1,11 @@
 <template>
-	<div id="app">
-		<SideBar></SideBar>
+	<div id="app" class="FlexRow">
+		<SideBar :hidden='this.sideBarHidden'></SideBar>
+		<main>
+			<router-view></router-view>
+
+			<div class="btn" v-on:click="this.toggleSidebar">sdjflsdjf</div>
+		</main>
 	</div>
 </template>
 
@@ -10,9 +15,28 @@
 
 	export default {
 		data(){
-			return{}
+			return{
+				sideBarHidden: true
+			}
 		},
-		components: {SideBar}
+		components: {SideBar},
+		methods: {
+			toggleSidebar(bool){
+				console.log('Toggle sidebar');
+				if(bool === true){
+					console.log('True');
+					this.sideBarHidden = false
+				}
+				else if(bool === false){
+					console.log('False');
+					this.sideBarHidden = true;
+				}
+				else{
+					console.log('Null')
+					this.sideBarHidden = !this.sideBarHidden;
+				}
+			}
+		}
 	}
 </script>
 
@@ -24,10 +48,26 @@ body{
 	font-family: $primary-font;
 }
 
+main{
+	// flex: 1 100%;
+	flex-grow: 5;
+	display: flex;
+	vertical-align: top; 
+}
+
 #app{
-	width: 100%;
-	min-height: 100vh;
-	height: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.FlexRow{
+	display: flex;
+    flex-flow: row;
+}
+
+.FlexSidebar{
+	flex: 1;
+    transition: flex-grow 1000ms linear;
 }
 
 </style>

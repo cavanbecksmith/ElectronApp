@@ -1,6 +1,6 @@
 <template>
 	
-	<div class="SideBar">
+	<div class="SideBar FlexSidebar" v-bind:class="{ hidden: hidden }">
 		<div class="MenuHeading">Testing</div>
 		<ul class="list">
 			<li><a href="">Something</a></li>
@@ -13,17 +13,34 @@
 
 <script type="text/javascript">
 	export default {
-		name: "SideBar"
+		name: "SideBar",
+		props: ['hidden'],
+		mounted(){
+			// if(this.hidden){}
+			console.log(this.hidden);
+		},
+		watch: {
+			hidden(val){
+				console.log(val);
+			}		
+		}
 	}
 </script>
 
 <style type="text/css" lang="scss">
+
 	.SideBar{
-		width: 160px;
 		height: 100vh;
 		display: inline-block;
 		background: rgb(37, 42, 58);
 		color: white;
+        flex: 1 5%;
+		&.hidden{
+			display: none;
+			// flex-grow: 0.0001;
+			// transition: flex 1s ease;
+			// display: none;
+		}
 		.MenuHeading{
 		    font-size: 125%;
 		    font-weight: 300;
@@ -37,6 +54,7 @@
 		ul.list{
 	    	border-top: 1px solid #333;
 			li{
+				transition: all 0.5s;
 				&:hover{
 					background: #1f8dd6;
 					color: white !important;
