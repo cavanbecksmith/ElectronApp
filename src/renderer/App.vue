@@ -1,16 +1,19 @@
 <template>
-	<div id="app" class="FlexRow">
-		<SideBar :hidden='this.sideBarHidden'></SideBar>
-		<main>
-			<router-view></router-view>
-
-			<div class="btn" v-on:click="this.toggleSidebar">sdjflsdjf</div>
-		</main>
+	<div id="app">
+		<NavBar></NavBar>
+		<div class="flex-row">
+			<SideBar :hidden='this.sideBarHidden'></SideBar>
+			<main class="flex-auto">
+				<router-view></router-view>
+				<div class="btn" v-on:click="this.toggleSidebar">sdjflsdjf</div>
+			</main>
+		</div>
 	</div>
 </template>
 
 <script type="text/javascript">
 	import SideBar from './components/SideBar';
+	import NavBar from './components/NavBar';
 	import './scss/main.scss';
 
 	export default {
@@ -19,20 +22,17 @@
 				sideBarHidden: true
 			}
 		},
-		components: {SideBar},
+		components: {SideBar, NavBar},
 		methods: {
 			toggleSidebar(bool){
 				console.log('Toggle sidebar');
 				if(bool === true){
-					console.log('True');
 					this.sideBarHidden = false
 				}
 				else if(bool === false){
-					console.log('False');
 					this.sideBarHidden = true;
 				}
 				else{
-					console.log('Null')
 					this.sideBarHidden = !this.sideBarHidden;
 				}
 			}
@@ -50,24 +50,16 @@ body{
 
 main{
 	// flex: 1 100%;
-	flex-grow: 5;
+	// flex-grow: 5;
 	display: flex;
-	vertical-align: top; 
+	vertical-align: top;
+	background-color:#f9f7f7;
+	height: 100vh;
 }
 
 #app{
     font-weight: bold;
     text-align: center;
-}
-
-.FlexRow{
-	display: flex;
-    flex-flow: row;
-}
-
-.FlexSidebar{
-	flex: 1;
-    transition: flex-grow 1000ms linear;
 }
 
 </style>

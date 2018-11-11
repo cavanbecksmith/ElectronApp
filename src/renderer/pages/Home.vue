@@ -1,6 +1,8 @@
 <template>
 	<div class="Home">
-		This is the homepage
+		<div class="container">
+			<div class="Section box-shadow-3d"></div>
+		</div>
 	</div>
 </template>
 
@@ -11,5 +13,8 @@
 </script>
 
 <style type="text/css">
-	.Home{}
+	.Home{
+		width: 100%;
+		height: 100%;
+	}
 </style>
