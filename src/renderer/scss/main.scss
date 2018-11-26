@@ -1,12 +1,24 @@
 @import "variables";
 @import "reset";
 @import "flex";
+@import "bootstrap/scss/bootstrap.scss";
 
 // --- Layout - Containers
 
-.container{
-	padding: 30px;
-	box-sizing: border-box;
+body{
+	font-family: $primary-font;
+}
+
+main{
+	display: flex;
+	vertical-align: top;
+	background-color:#f9f7f7;
+	height: 100vh;
+}
+
+#app{
+    font-weight: bold;
+    text-align: center;
 }
 
 .Section{
@@ -32,3 +44,7 @@
 }
 
 // --- Fonts
+
+.bg-black{
+	background: #000 !important;
+}

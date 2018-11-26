@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './App.vue';
+import $ from 'jquery';
+import PopperJs from 'popper.js';
+window.$ = $;
+require('bootstrap');
 
 Vue.use(VueRouter);
 
@@ -13,10 +17,6 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
-
-
-
-// console.log(Vue);
 console.log('hey');
 new Vue({
   name: 'app',

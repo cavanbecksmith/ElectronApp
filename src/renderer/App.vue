@@ -25,7 +25,6 @@
 		components: {SideBar, NavBar},
 		methods: {
 			toggleSidebar(bool){
-				console.log('Toggle sidebar');
 				if(bool === true){
 					this.sideBarHidden = false
 				}
@@ -43,23 +42,5 @@
 <style type="text/css" lang="scss">
 
 @import "./scss/main.scss";
-
-body{
-	font-family: $primary-font;
-}
-
-main{
-	// flex: 1 100%;
-	// flex-grow: 5;
-	display: flex;
-	vertical-align: top;
-	background-color:#f9f7f7;
-	height: 100vh;
-}
-
-#app{
-    font-weight: bold;
-    text-align: center;
-}
 
 </style>
