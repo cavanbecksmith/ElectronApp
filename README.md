@@ -1,4 +1,9 @@
 # electron-webpack-quick-start
+
+## Tasks
+
+* Issue with windows -> compiles but doesn't show window
+
 > A bare minimum project structure to get started developing with [`electron-webpack`](https://github.com/electron-userland/electron-webpack).
 
 Thanks to the power of `electron-webpack` this template comes packed with...
